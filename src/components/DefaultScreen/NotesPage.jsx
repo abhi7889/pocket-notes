@@ -8,9 +8,9 @@ export default function NotesPage() {
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [notes, setNotes] = useState([]);
 
-  const groupNames = JSON.parse(localStorage.getItem("groupNames"));
+  const groupNames = JSON.parse(localStorage.getItem("groupNames")) || [];
   let firstWord = "";
-  if (groupNames) {
+  if (groupNames.length > 0) {
     firstWord = groupNames[0].name
       .split(" ")
       .map((word) => word.charAt(0))
