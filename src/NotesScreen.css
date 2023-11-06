@@ -1,0 +1,14 @@
+.notes--screen
+{
+    width: 67vw;
+    height: 100vh;
+   
+}
+
+@media (max-width: 600px) {
+    .notes-screen {
+        width: 100vw;
+      display: block;
+    }
+
+  }

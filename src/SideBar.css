@@ -1,0 +1,10 @@
+.sidebar-screen {
+  width: 33vw;
+  height: 100vh;
+}
+
+@media (max-width: 600px) {
+  .sidebar-screen {
+    width: 100vw;
+  }
+}
