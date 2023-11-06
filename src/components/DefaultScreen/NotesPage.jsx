@@ -9,11 +9,14 @@ export default function NotesPage() {
   const [notes, setNotes] = useState([]);
 
   const groupNames = JSON.parse(localStorage.getItem("groupNames"));
-  const firstWord = groupNames[0].name
-    .split(" ")
-    .map((word) => word.charAt(0))
-    .join("")
-    .toUpperCase();
+  let firstWord = "";
+  if (groupNames) {
+    firstWord = groupNames[0].name
+      .split(" ")
+      .map((word) => word.charAt(0))
+      .join("")
+      .toUpperCase();
+  }
   // console.log("groupNames", groupNames);
   const location = useLocation();
   const selectedTitle = location.state ? location.state.selectedTitle : null;
