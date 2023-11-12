@@ -5,7 +5,7 @@ import "./NotesTiles.css";
 export default function NotesTitle({ title, selectedTitle, setSelectedTitle }) {
   const navigate = useNavigate();
 
-  const nameFirst = title[0].name
+  const nameInitial = title[0].name
     .split(" ")
     .map((word) => word.charAt(0))
     .join("")
@@ -30,7 +30,7 @@ export default function NotesTitle({ title, selectedTitle, setSelectedTitle }) {
         className="initial--title--circle"
         style={{ backgroundColor: title[0].color }}
       >
-        {nameFirst}
+        {nameInitial}
       </div>
       <div className="group__title">{newTitle}</div>
     </div>

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import images from "../../assets/images";
 import "./Notespage.css";
 
-export default function NotesPage() {
+export default function NotesPage({ title, setShowNotesContent }) {
   const [note, setNote] = useState("");
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [notes, setNotes] = useState([]);
@@ -63,7 +63,9 @@ export default function NotesPage() {
       setNote("");
     }
   };
-
+  const handleBackClick = () => {
+    setShowNotesContent(false);
+  };
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       handleNoteSubmit(event);
@@ -76,6 +78,10 @@ export default function NotesPage() {
           <div className="header">
             {selectedGroup && (
               <>
+                <div>
+                  <button className="back--button" onClick={handleBackClick}>Back</button>
+                  {/* Rest of your component */}
+                </div>
                 <div
                   style={{ backgroundColor: selectedGroup.color }}
                   className="profile--logo"
@@ -95,7 +101,7 @@ export default function NotesPage() {
             ))}
           </div>
           <div className="text-area--bottom">
-            <form  onSubmit={handleNoteSubmit}>
+            <form onSubmit={handleNoteSubmit}>
               <div style={{ position: "relative" }}>
                 <textarea
                   placeholder="Enter your text here..........."
