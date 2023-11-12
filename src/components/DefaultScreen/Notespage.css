@@ -174,8 +174,12 @@ textarea {
   color: white;
 }
 
-/* @media (min-width: 600px) {
+@media (min-width: 600px) {
   .header {
     width: 100%;
   }
-} */
+  textarea{
+    width: 200px;
+  }
+
+}
